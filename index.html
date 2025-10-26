@@ -107,8 +107,22 @@
             <!-- Contenedor de Diapositivas -->
             <div id="slides-wrapper" class="p-8 md:p-12 min-h-[450px] md:min-h-[500px] flex flex-col justify-center relative">
                 
+                <!-- Diapositiva 0: Título y QR -->
+                <div class="slide slide-active space-y-5 text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold text-indigo-700">Las Parábolas y el RD Ciudad</h2>
+                    <p class="text-xl md:text-2xl text-gray-800 font-light">Escanea el código QR para ver en tu dispositivo</p>
+                    
+                    <div id="qr-code-container" class="flex justify-center items-center p-4 bg-white/30 rounded-lg border border-white/30 w-48 h-48 mx-auto shadow-inner">
+                        <!-- El QR se insertará aquí -->
+                        <img id="qr-code-img" src="" alt="Código QR" class="w-full h-full hidden rounded-md">
+                        <div id="qr-loading" class="text-gray-700 font-semibold">Generando QR...</div>
+                    </div>
+                    
+                    <p class="text-sm text-gray-700 italic pt-2">(Nota: El QR solo funcionará si esta página está en un sitio web)</p>
+                </div>
+
                 <!-- Diapositiva 1: Introducción y Objetivos -->
-                <div class="slide slide-active space-y-5">
+                <div class="slide space-y-5">
                     <div class="flex items-center">
                         <svg class="icon text-indigo-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21" /></svg>
                         <h2 class="text-3xl md:text-4xl font-bold text-indigo-700">Las Parábolas y el RD Ciudad</h2>
@@ -289,7 +303,7 @@
                     &larr; Anterior
                 </button>
                 <span id="slide-counter" class="text-base font-semibold text-gray-900">
-                    Diapositiva 1 / 7
+                    Diapositiva 1 / 8
                 </span>
                 <button id="next" class="px-6 py-3 bg-gradient-to-r from-blue-500 to-indigo-600 text-white rounded-full font-semibold hover:from-blue-600 hover:to-indigo-700 transform transition duration-200 ease-in-out hover:scale-105 shadow-lg border border-indigo-700/50">
                     Siguiente &rarr;
@@ -307,7 +321,34 @@
             const slideCounter = document.getElementById('slide-counter');
             const prevBtn = document.getElementById('prev');
             const nextBtn = document.getElementById('next');
-            const totalSlides = slides.length;
+            const totalSlides = slides.length; // Ahora es 8
+
+            const qrImg = document.getElementById('qr-code-img');
+            const qrLoading = document.getElementById('qr-loading');
+            
+            // Generar QR Code
+            try {
+                const currentUrl = window.location.href;
+                const encodedUrl = encodeURIComponent(currentUrl);
+                // Usamos una API para generar el QR. 
+                // bgcolor=ffffff-00 (fondo transparente) y color=0d1a44 (azul oscuro)
+                const qrApiUrl = `https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${encodedUrl}&qzone=1&bgcolor=ffffff-00&color=0d1a44`;
+                
+                qrImg.onload = () => {
+                    qrLoading.style.display = 'none';
+                    qrImg.style.display = 'block';
+                };
+                qrImg.onerror = () => {
+                     qrLoading.textContent = 'Error al cargar QR.';
+                     qrLoading.classList.add('text-red-600');
+                };
+                qrImg.src = qrApiUrl;
+
+            } catch (e) {
+                console.error("Error generating QR code:", e);
+                qrLoading.textContent = 'No se pudo generar el QR.';
+                qrLoading.classList.add('text-red-600');
+            }
 
             function showSlide(slideIndex) {
                 // Ocultar todas las diapositivas
@@ -356,5 +397,7 @@
 
 </body>
 </html>
+
+
 
 
