@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentación: El Reino de Dios</title>
+    <!-- Carga de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Carga de la fuente Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Usar Inter como fuente principal */
+        body {
+            font-family: 'Inter', sans-serif;
+            /* Estilo de fondo animado de CodePen */
+            overflow: hidden; /* Prevenir scroll por las formas */
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient-animation 15s ease infinite;
+        }
+
+        /* Animación de gradiente */
+        @keyframes gradient-animation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Formas de fondo de CodePen */
+        .shape-1, .shape-2, .shape-3 {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(120px); /* Un poco menos de blur que el original */
+            z-index: 1;
+        }
+        .shape-1 {
+            width: 400px; height: 400px;
+            background: rgba(231, 60, 126, 0.6);
+            top: -100px; left: -100px;
+            animation: circle-animation 20s infinite alternate;
+        }
+        .shape-2 {
+            width: 300px; height: 300px;
+            background: rgba(35, 166, 213, 0.6);
+            bottom: -50px; right: -50px;
+            animation: circle-animation 25s infinite alternate;
+        }
+        .shape-3 {
+            width: 250px; height: 250px;
+            background: rgba(35, 213, 171, 0.5);
+            bottom: 150px; left: 200px;
+            animation: circle-animation 15s infinite alternate;
+        }
+        @keyframes circle-animation {
+            from { transform: translate(0, 0) scale(1); }
+            to { transform: translate(100px, 50px) scale(1.2); }
+        }
+
+
+        /* Animación de entrada para las diapositivas */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .slide {
+            display: none; /* Ocultas por defecto */
+        }
+        .slide-active {
+            display: block; /* Visible */
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+        
+        /* Iconos SVG */
+        .icon {
+            width: 1.5em;
+            height: 1.5em;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 0.5rem;
+        }
+    </style>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen p-4 md:p-8">
+
+    <!-- Formas de fondo -->
+    <div class="shape-1"></div>
+    <div class="shape-2"></div>
+    <div class="shape-3"></div>
+
+    <div class="w-full max-w-4xl z-10">
+        <h1 class="text-3xl md:text-4xl font-extrabold text-center text-white mb-6 drop-shadow-lg">
+            Presentación Interactiva: El Reino de Dios
+        </h1>
+
+        <!-- Contenedor de la Presentación (Glassmorphism) -->
+        <div id="presentation-container" class="bg-white/30 backdrop-blur-lg border border-white/20 rounded-2xl shadow-xl overflow-hidden">
+            
+            <!-- Contenedor de Diapositivas -->
+            <div id="slides-wrapper" class="p-8 md:p-12 min-h-[450px] md:min-h-[500px] flex flex-col justify-center relative">
+                
+                <!-- Diapositiva 1: Introducción y Objetivos -->
+                <div class="slide slide-active space-y-5">
+                    <div class="flex items-center">
+                        <svg class="icon text-indigo-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21" /></svg>
+                        <h2 class="text-3xl md:text-4xl font-bold text-indigo-700">Las Parábolas y el RD Ciudad</h2>
+                    </div>
+                    <p class="text-xl md:text-2xl text-gray-700 font-light">Basado en José María Castillo (Cap. 8 A)</p>
+                    <hr class="my-6 border-t-2 border-white/30 rounded-full">
+                    <h3 class="text-2xl md:text-3xl font-semibold text-gray-900">Objetivos:</h3>
+                    <ul class="list-none space-y-3 text-lg md:text-xl text-gray-800">
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-green-500 mr-3 flex-shrink-0 mt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                            <span>Comprender que el RD es la <strong class="font-semibold text-gray-900">transformación de la historia</strong> aquí y ahora.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-green-500 mr-3 flex-shrink-0 mt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+                            <span>Identificar la parábola como el <strong class="font-semibold text-gray-900">vehículo indispensable</strong> para este anuncio.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Diapositiva 2: El reino de Dios: Denuncia y Proyecto -->
+                <div class="slide space-y-5">
+                    <div class="flex items-center">
+                        <svg class="icon text-indigo-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12c0-1.232-.046-2.453-.138-3.662a4.006 4.006 0 0 0-3.7-3.7 48.678 48.678 0 0 0-7.324 0 4.006 4.006 0 0 0-3.7 3.7c-.092 1.21-.138 2.43-.138 3.662 0 1.232.046 2.453.138 3.662a4.006 4.006 0 0 0 3.7 3.7 48.656 48.656 0 0 0 7.324 0 4.006 4.006 0 0 0 3.7-3.7c.092-1.21.138-2.43.138-3.662Z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" /></svg>
+                        <h2 class="text-3xl md:text-4xl font-bold text-indigo-700">El RD: Un Proyecto de Vida</h2>
+                    </div>
+                    <p class="text-xl md:text-2xl text-gray-700 font-light">Denuncia y Proyecto</p>
+                    <hr class="my-6 border-t-2 border-white/30 rounded-full">
+                    <ul class="list-none space-y-4 text-lg md:text-xl text-gray-800">
+                        <li class="flex items-center p-3 bg-white/20 rounded-lg">
+                            <strong class="text-indigo-700 mr-2">Central:</strong> El RD es la <strong class="text-gray-900 ml-1">Transformación de la Historia</strong> (defender, dignificar, disfrutar la vida).
+                        </li>
+                        <li class="flex items-center p-3 bg-white/20 rounded-lg">
+                            <strong class="text-indigo-700 mr-2">Denuncia:</strong> Actúa contra la <strong class="text-gray-900 ml-1">"agresión a la vida"</strong> (injusticia, acumulación).
+                        </li>
+                        <li class="flex items-center p-3 bg-white/20 rounded-lg">
+                            <strong class="text-indigo-700 mr-2">Mensaje:</strong> Anuncia una <strong class="text-gray-900 ml-1">nueva "Ciudad"</strong> basada en misericordia y justicia.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Diapositiva 3: Género Literario: La Parábola y sus Deformaciones -->
+                <div class="slide space-y-5">
+                    <div class="flex items-center">
+                        <svg class="icon text-indigo-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18c-2.305 0-4.408.867-6 2.292m0-14.25v14.25" /></svg>
+                        <h2 class="text-3xl md:text-4xl font-bold text-indigo-700">La Parábola: Metáfora Subversiva</h2>
+                    </div>
+                     <p class="text-xl md:text-2xl text-gray-700 font-light">Género Literario y Deformaciones</p>
+                    <hr class="my-6 border-t-2 border-white/30 rounded-full">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-lg text-gray-800">
+                        <div class="bg-white/20 p-4 rounded-lg border border-white/30">
+                            <h4 class="font-semibold text-xl text-blue-900 mb-2">Función Dual</h4>
+                            <ul class="list-disc list-inside space-y-1">
+                                <li><strong class="font-medium">Revelación:</strong> Para los abiertos al "secreto del Reino".</li>
+                                <li><strong class="font-medium">Enigma:</strong> Para los dirigentes adversarios.</li>
+                            </ul>
+                        </div>
+                         <div class="bg-black/5 p-4 rounded-lg border border-black/10">
+                            <h4 class="font-semibold text-xl text-red-900 mb-2">Deformación Histórica</h4>
+                            <p>Pasó de un sentido <strong class="text-red-700">escatológico</strong> (urgencia, decisión) a uno <strong class="text-green-700">moralizante</strong> (exhortación), perdiendo su fuerza subversiva.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Diapositiva 4: La Clave: La Extravagancia -->
+                <div class="slide space-y-5">
+                    <div class="flex items-center">
+                        <svg class="icon text-indigo-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" /></svg>
+                        <h2 class="text-3xl md:text-4xl font-bold text-indigo-700">La Clave: La Extravagancia</h2>
+                    </div>
+                    <p class="text-xl md:text-2xl text-gray-700 font-light">Romper la Lógica Humana</p>
+                    <hr class="my-6 border-t-2 border-white/30 rounded-full">
+                    
+                    <div class="text-center">
+                        <svg class="w-full h-32 md:h-40 text-gray-800" viewBox="0 0 300 100" preserveAspectRatio="xMidYMid meet">
+                            <text x="50" y="45" font-family="Inter, sans-serif" font-size="14" fill="currentColor" font-weight="600" text-anchor="middle">Lógica Humana</text>
+                            <text x="50" y="65" font-family="Inter, sans-serif" font-size="12" fill="currentColor" text-anchor="middle">(Mérito / Cálculo)</text>
+                            <path d="M 100 50 L 140 50" stroke="currentColor" stroke-width="2" stroke-dasharray="4 4" />
+                            <circle cx="150" cy="50" r="25" fill="none" stroke="#6366f1" stroke-width="3"/>
+                            <text x="150" y="55" font-family="Inter, sans-serif" font-size="18" fill="#6366f1" font-weight="bold" text-anchor="middle">!</text>
+                            <path d="M 160 50 L 200 50" stroke="currentColor" stroke-width="2" stroke-dasharray="4 4" />
+                            <text x="250" y="45" font-family="Inter, sans-serif" font-size="14" fill="currentColor" font-weight="600" text-anchor="middle">Lógica de Dios</text>
+                            <text x="250" y="65" font-family="Inter, sans-serif" font-size="12" fill="currentColor" text-anchor="middle">(Don Incondicional)</text>
+                        </svg>
+                    </div>
+                    <p class="text-center text-lg md:text-xl text-gray-800 mt-4">El "estupor" o "sorpresa" crea un <strong class="text-indigo-700">"Corte Problemático"</strong> que revela lo absurda que es nuestra "normalidad" injusta ante la Gracia.</p>
+                </div>
+
+                <!-- Diapositiva 5: Ejemplos de Extravagancia y Subversión Social -->
+                <div class="slide space-y-5">
+                     <div class="flex items-center">
+                        <svg class="icon text-indigo-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-3.741-5.245M11.99 9.093c.535 0 .964.42 1.065.953.11.552.327 1.074.625 1.55.297.475.655.89.99 1.258a3 3 0 0 1-.498 5.151 9.094 9.094 0 0 1-3.741.479 3 3 0 0 1-3.741-5.245c.335-.368.693-.783.99-1.258.298-.476.515-.998.625-1.55.101-.533.53-1.002 1.114-1.002ZM12 9.093a9.093 9.093 0 0 0-3.741-.479 3 3 0 0 0-3.741 5.245 9.093 9.093 0 0 0 3.741.479 3 3 0 0 0 3.741-5.245A9.093 9.093 0 0 0 12 9.093Z" /></svg>
+                        <h2 class="text-3xl md:text-4xl font-bold text-indigo-700">Ejemplos de Subversión Social</h2>
+                    </div>
+                    <p class="text-xl md:text-2xl text-gray-700 font-light">Parábolas Clave del RD Ciudad</p>
+                    <hr class="my-6 border-t-2 border-white/30 rounded-full">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-lg">
+                        <div class="flex items-start p-3 bg-white/20 rounded-lg">
+                            <svg class="w-10 h-10 text-indigo-600 mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" /></svg>
+                            <p><strong class="text-gray-900">Hijo Pródigo:</strong> El <span class="font-semibold text-indigo-700">cariño radical</span> supera al mérito.</p>
+                        </div>
+                        <div class="flex items-start p-3 bg-white/20 rounded-lg">
+                            <svg class="w-10 h-10 text-indigo-600 mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 0 1 3 6h-.75m0 0v-.75A.75.75 0 0 1 3 4.5h.75m0 0H21m-12 6.75h.008v.008H9v-.008Zm3 0h.008v.008H12v-.008Zm3 0h.008v.008H15v-.008Zm-3 3h.008v.008H12v-.008Zm3 0h.008v.008H15v-.008Zm3 0h.008v.008H18v-.008Zm-3 3h.008v.008H12v-.008Zm3 0h.008v.008H15v-.008Z" /></svg>
+                            <p><strong class="text-gray-900">Dueño de la Viña:</strong> La <span class="font-semibold text-indigo-700">bondad incondicional</span> supera al trabajo utilitario.</p>
+                        </div>
+                        <div class="flex items-start p-3 bg-white/20 rounded-lg">
+                            <svg class="w-10 h-10 text-indigo-600 mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" /></svg>
+                            <p><strong class="text-gray-900">Buen Samaritano:</strong> La caridad <span class="font-semibold text-indigo-700">supera enemistades</span>.</p>
+                        </div>
+                         <div class="flex items-start p-3 bg-white/20 rounded-lg">
+                            <svg class="w-10 h-10 text-indigo-600 mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-3.741-5.245M11.99 9.093c.535 0 .964.42 1.065.953.11.552.327 1.074.625 1.55.297.475.655.89.99 1.258a3 3 0 0 1-.498 5.151 9.094 9.094 0 0 1-3.741.479 3 3 0 0 1-3.741-5.245c.335-.368.693-.783.99-1.258.298-.476.515-.998.625-1.55.101-.533.53-1.002 1.114-1.002ZM12 9.093a9.093 9.093 0 0 0-3.741-.479 3 3 0 0 0-3.741 5.245 9.093 9.093 0 0 0 3.741.479 3 3 0 0 0 3.741-5.245A9.093 9.093 0 0 0 12 9.093Z" /></svg>
+                            <p><strong class="text-gray-900">Invitados a la Boda:</strong> Denuncia la <span class="font-semibold text-indigo-700">exclusión social</span>.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Diapositiva 6: La Parábola del Crecimiento (El Grano de Mostaza) -->
+                <div class="slide space-y-5">
+                    <div class="flex items-center">
+                         <svg class="icon text-indigo-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941" /></svg>
+                        <h2 class="text-3xl md:text-4xl font-bold text-indigo-700">El Grano de Mostaza</h2>
+                    </div>
+                    <p class="text-xl md:text-2xl text-gray-700 font-light">La Fuerza Oculta del Reino (Mc 4)</p>
+                    <hr class="my-6 border-t-2 border-white/30 rounded-full">
+                    
+                    <div class="flex items-center justify-center space-x-4 md:space-x-8 text-center text-gray-800 my-6">
+                        <!-- Semilla -->
+                        <div class="flex flex-col items-center">
+                            <svg class="w-12 h-12 text-yellow-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M3 4.25A2.25 2.25 0 0 1 5.25 2h9.5A2.25 2.25 0 0 1 17 4.25v2.51a.75.75 0 0 1-.3.6l-3.03 2.525a.75.75 0 0 0 0 1.23l3.03 2.525a.75.75 0 0 1 .3.6v2.51A2.25 2.25 0 0 1 14.75 18h-9.5A2.25 2.25 0 0 1 3 15.75v-2.51a.75.75 0 0 1 .3-.6l3.03-2.525a.75.75 0 0 0 0-1.23L3.3 6.36a.75.75 0 0 1-.3-.6V4.25Z" /></svg>
+                            <span class="text-lg font-semibold mt-2">Pequeña Semilla</span>
+                            <span class="text-sm">(Contraste)</span>
+                        </div>
+                        
+                        <svg class="w-12 h-12 md:w-20 md:h-20 text-gray-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" /></svg>
+                        
+                        <!-- Árbol -->
+                        <div class="flex flex-col items-center">
+                            <svg class="w-16 h-16 text-green-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M9.69 18.933l.003.001C9.89 19.02 10 19 10 19s.11.02.308-.066l.002-.001.006-.003.018-.008a5.741 5.741 0 0 0 .281-.14c.186-.1.4-.223.654-.369.254-.146.548-.313.868-.5.32-.187.68-.4.98-.633.299-.234.57-.496.791-.785.22-.289.41-.61.558-.951.149-.34.27-.711.352-1.103.081-.392.13-1.023.13-1.878s-.049-1.486-.13-1.878c-.081-.392-.203-.763-.352-1.103a4.53 4.53 0 0 0-.558-.951c-.22-.289-.491-.55-.791-.785-.3-.234-.659-.447-.98-.633a11.07 11.07 0 0 0-.868-.5 11.42 11.42 0 0 0-.654-.369 5.74 5.74 0 0 0-.281-.14l-.018-.008-.006-.003ZM10 3.239c.353 0 .676.078.95.212.273.134.52.31.725.52.206.21.383.45.52.724.133.275.212.598.212.951v.019c0 .321-.07.618-.188.885l-1.04 2.89a.75.75 0 0 1-1.434-.516l1.04-2.89c.06-.166.08-.32.08-.456 0-.15-.027-.28-.07-.384a.63.63 0 0 0-.17-.27.63.63 0 0 0-.27-.17c-.104-.043-.234-.07-.384-.07s-.28.027-.384.07a.63.63 0 0 0-.27.17.63.63 0 0 0-.17.27c-.043.104-.07.234-.07.384 0 .136.02.29.08.456l1.04 2.89a.75.75 0 0 1-1.434.516l-1.04-2.89A1.75 1.75 0 0 1 8.25 5.5c0-.353.078-.676.212-.95.134-.274.31-.52.52-.725.21-.206.45-.383.724-.52.275-.133.598-.212.951-.212Z" clip-rule="evenodd" /></svg>
+                            <span class="text-lg font-semibold mt-2">Árbol Grande</span>
+                            <span class="text-sm">(Inclusión)</span>
+                        </div>
+                    </div>
+                    <ul class="list-none space-y-3 text-lg md:text-xl text-gray-800 mt-4">
+                        <li><strong class="text-gray-900">Mensaje:</strong> El Reino no crece por poder, sino por una <strong class="font-semibold text-green-700">fuerza transformadora oculta</strong> que genera inclusión.</li>
+                        <li><strong class="text-gray-900">Anuncio RD:</strong> El Reino como <strong class="font-semibold text-green-700">posibilidad utópica</strong> que desafía el tamaño.</li>
+                    </ul>
+                </div>
+
+                <!-- Diapositiva 7: Conclusión: Hacerse Parábola -->
+                <div class="slide space-y-5">
+                    <div class="flex items-center">
+                        <svg class="icon text-indigo-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 0 1 3 3h-15a3 3 0 0 1 3-3m9 0v-3.375c0-.621-.504-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.871m0 0h3.75m-3.75 0h.871M11.25 15.375h3.75M4.5 15.375h.871m0 0c.621 0 1.125.504 1.125 1.125v3.375m0 0h3.75" /></svg>
+                        <h2 class="text-3xl md:text-4xl font-bold text-indigo-700">Conclusión: "Hacerse Parábola"</h2>
+                    </div>
+                    <hr class="my-6 border-t-2 border-white/30 rounded-full">
+                    
+                    <div class="bg-white/30 border-l-4 border-indigo-400 p-6 rounded-r-lg text-xl md:text-2xl text-indigo-900 italic font-medium shadow-sm">
+                        "Solo cuando nosotros nos hacemos parábola, entonces es cuando comprendemos lo que nos enseña la parábola."
+                        <span class="block text-right not-italic font-semibold text-lg mt-2">— J.M. Castillo</span>
+                    </div>
+
+                    <ul class="list-none space-y-3 text-lg md:text-xl text-gray-800 pt-4">
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-indigo-600 mr-3 flex-shrink-0 mt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+                            <span><strong class="text-gray-900">El Reino es la Gran Metáfora:</strong> Apunta a "lo que tendría que ser la vida".</span>
+                        </li>
+                         <li class="flex items-start">
+                            <svg class="w-6 h-6 text-indigo-600 mr-3 flex-shrink-0 mt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+                            <span><strong class="text-gray-900">Vivir la Utopía:</strong> Anunciar el RD es vivir con <strong class="font-semibold text-indigo-700">generosidad e inclusión radical</strong>.</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            
+            <!-- Navegación -->
+            <nav class="flex items-center justify-between p-5 bg-white/10 border-t border-white/20">
+                <button id="prev" class="px-6 py-3 bg-white/30 text-gray-800 rounded-full font-semibold hover:bg-white/50 transform transition duration-200 ease-in-out disabled:opacity-40 disabled:cursor-not-allowed shadow-sm border border-white/20">
+                    &larr; Anterior
+                </button>
+                <span id="slide-counter" class="text-base font-semibold text-gray-900">
+                    Diapositiva 1 / 7
+                </span>
+                <button id="next" class="px-6 py-3 bg-gradient-to-r from-blue-500 to-indigo-600 text-white rounded-full font-semibold hover:from-blue-600 hover:to-indigo-700 transform transition duration-200 ease-in-out hover:scale-105 shadow-lg border border-indigo-700/50">
+                    Siguiente &rarr;
+                </button>
+            </nav>
+
+        </div>
+    </div>
+
+    <script>
+        // Lógica de la presentación
+        document.addEventListener('DOMContentLoaded', () => {
+            let currentSlide = 0;
+            const slides = document.querySelectorAll('.slide');
+            const slideCounter = document.getElementById('slide-counter');
+            const prevBtn = document.getElementById('prev');
+            const nextBtn = document.getElementById('next');
+            const totalSlides = slides.length;
+
+            function showSlide(slideIndex) {
+                // Ocultar todas las diapositivas
+                slides.forEach((slide, index) => {
+                    if (index === slideIndex) {
+                        // Forzar 'display: block' antes de animar
+                        slide.style.display = 'block';
+                        slide.classList.add('slide-active');
+                        slide.classList.remove('slide'); 
+                    } else {
+                        slide.classList.remove('slide-active');
+                        slide.classList.add('slide');
+                        // Ocultar después de que la otra se muestre
+                        slide.style.display = 'none';
+                    }
+                });
+
+                // Actualizar el contador
+                slideCounter.textContent = `Diapositiva ${slideIndex + 1} / ${totalSlides}`;
+
+                // Habilitar/deshabilitar botones
+                prevBtn.disabled = slideIndex === 0;
+                nextBtn.disabled = slideIndex === totalSlides - 1;
+                
+                // Actualizar el índice actual
+                currentSlide = slideIndex;
+            }
+
+            // Event Listeners para los botones
+            prevBtn.addEventListener('click', () => {
+                if (currentSlide > 0) {
+                    showSlide(currentSlide - 1);
+                }
+            });
+
+            nextBtn.addEventListener('click', () => {
+                if (currentSlide < totalSlides - 1) {
+                    showSlide(currentSlide + 1);
+                }
+            });
+            
+            // Mostrar la primera diapositiva al cargar
+            showSlide(0);
+        });
+    </script>
+
+</body>
+</html>
+
+
